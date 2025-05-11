@@ -7,7 +7,7 @@ let ul = document.getElementById("ul")
 //       .then(json => console.log(json))
 
 
-fetch('https://rickandmortyapi.com/api/character')
+let list = fetch('https://rickandmortyapi.com/api/character')
     .then(response => response.json())
     .then((data) => {
         // console.log(data)
@@ -15,10 +15,8 @@ fetch('https://rickandmortyapi.com/api/character')
             let li = document.createElement("li")
             ul.appendChild(li)
             li.innerText = `name : ${items.name}`
-        })
-        data.results.map(items => {
             let img = document.createElement("img")
-            ul.appendChild(img)
+            li.appendChild(img)
             img.src = items.image;
         })
         
